@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>HUNDO: A CODING PROJECT</title>
+    <title>FIZZBUZZ: A CODING PROJECT</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,10 +26,10 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
             <img src="img/MspectreMark.svg" height="24" class="d-inline-block align-text-top"/>
-            Hundo
+            FIZZBUZZ
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -55,10 +55,10 @@
        <div class="container mt-5">
             <div class="row">
                 <div class="col">
-                    <h1>Hundo: A coding challenge</h1>
+                    <h1>FIZZBUZZ: A coding challenge</h1>
                     <h4 class="lead">
                         Live Life One loop at a time.  A javascript application using loops.
-                          Write a program that displays from 0 to 100.  Displaying even numbers in <span class="fw-bold">BOLD</span>.
+                          Write a program that displays from 1 to 100.  Displaying even numbers in <span class="fw-bold">BOLD</span>.
                     </h4>
                     <h2 class="mt-5 border-bottom border-5 border-dark">Instructions</h2>
                     <p>Enter a starting value and a ending value.  Press the button and the values will appear.</p>
@@ -68,20 +68,21 @@
                         <h5>Enter Values</h5>
                         <form class="row">
                             <div class="col">
-                                 <label for="startValue" class="form-label">Start Value</label>
-                                <input type="text" class="form-control" id="startValue" type="number" placeholder="Start Value" value=0 arei-label="Start Value">
+                                 <label for="fizzValue" class="form-label">Fizz Value</label>
+                                <input type="text" class="form-control" id="fizzValue" type="number" placeholder="Start Value" value=1 aria-label="Start Value">
                             </div>
                             <div class="col">
-                                 <label for="endValue" class="form-label">End Value</label>
-                                <input type="text" class="form-control" id="endValue" type="number" placeholder="End Value" value=100 arei-label="End Value">
+                                 <label for="buzzValue" class="form-label">Buzz Value</label>
+                                <input type="text" class="form-control" id="buzzValue" type="number" placeholder="End Value" value=100 aria-label="End Value">
                             </div>
                             <div class="col-12 d-flex justify-content-lg-end">
-                                <button id="btnSubmit" type="button" class="btn btn-dark btn-large">Display The Hundo</button>
+                                <button id="btnSubmit" type="button" class="btn btn-dark btn-large">Display The FIZZBUZZ</button>
                             </div>
                         </form>
                         <h2 class="mt-5 border-bottom border-5 border-dark">Results</h2>
-                        <div class="table-responsive">
-                            <table id="results" class="table table-hover table-striped table-sm"></table>
+                        <div id="results" class="row row-cols-5">
+                            <!----------------------  CONTENT GOES HERE ---------------->
+
                         </div>
                     </div>
                 </div>

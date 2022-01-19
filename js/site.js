@@ -1,35 +1,23 @@
 
-// display message to the user.
-
-function getMessage() {
-    let userMessage = document.getElementById("message").value;
-    Swal.fire(
-        'Button clicked!',
-        userMessage,
-        "success"
-    );
-    console.log(userMessage);
-}
-
 
 // Program Entry Point
 
 function getValues2() {
-    let startValue = document.getElementById("startValue").value;
-    let endValue = document.getElementById("endValue").value;
+    let fizzValue = document.getElementById("fizzValue").value;
+    let buzzValue = document.getElementById("buzzValue").value;
 
-    startValue = parseInt(startValue);
-    endValue = parseInt(endValue);
+    fizzValue = parseInt(fizzValue);
+    buzzValue = parseInt(buzzValue);
 
     // check if they are in fact INTEGERS !
 
-    if(Number.isInteger(startValue) && Number.isInteger(endValue) ) {
+    if(Number.isInteger(fizzValue) && Number.isInteger(buzzValue) ) {
 
         // generate a list of NUMBERS
-        let numbers = generateNumbers(startValue, endValue);
+        let numbers = generateNumbers(fizzValue, buzzValue);
 
         // DISPLAY A LIST OF NUMBERS
-        displayNumbers(numbers);
+        displayData(numbers);
 
     } 
     else {
@@ -42,35 +30,68 @@ function getValues2() {
     
 }
 
-function generateNumbers(start, end) {
+function generateNumbers(fizzValue, buzzValue) {
 
     let numbers= [];
-    for (let i = start; i <= end; i++) {
+    for (let i = 1; i <= 100; i++) {
+
+     if (number % (buzzValue * fizzValue) == 0) {
+        numbers.push("FIZZBUZZ");
+
+       } else if (number % (buzzValue) == 0) {
+         numbers.push("buzz");
+       } else if (number % (fizzValue) == 0) {
+         numbers.push("fizz");
+      } else {
         numbers.push(i);
+      }
+    
     }
 
     return numbers;
 
 }
 
-function displayNumbers(numbers) {
+// function displayNumbers(numbers) {
 
-    let templateRows = "";
-    for (let index = 0; index < numbers.length; index ++) {
+//     let templateRows = "";
+//     for (let index = 0; index < numbers.length; index ++) {
+//       let number = numbers[index];
+//         let result = "";
 
-        let number = numbers[index];
+//       if (number % 15 == 0) {
+//         result = "FIZZBUZZ";
+//       } else if (number % 5 == 0) {
+//         result = "buzz";
+//       } else if (number % 3 == 0) {
+//         result = "fizz";
+//       } else {
+//         result = number;
+//       }
 
-        if (number % 2 == 0) {
-            className = "even";
-        }
-        else {
-            className = "odd";
-        }
+      
+//         let row = `<tr><td class="${result}">${result}</td></tr>`;
+//         templateRows += row;
 
-        let row = `<tr><td class="${className}">${number}</td></tr>`;
-        templateRows += row;
 
+//     }
+
+//     document.getElementById("results").innerHTML = templateRows;
+// }
+
+function displayData(fbData) {
+    let contentDiv = document.getElementById("results");
+    let content = "";
+
+    //   CLEAR PREVIOUS DATA
+    contentDiv.innerHTML = "";
+
+    for (let i = 0; i < fbData.length; i++) {
+        let dataValue = fbData[i];
+        let dataElement = `<div class="col ${dataValue}">${dataValue}</div>`;
+        content += dataElement;
     }
 
-    document.getElementById("results").innerHTML = templateRows;
+    // WRITE THE RESULTS TO THE PAGE
+    contentDiv.innerHTML = content;
 }

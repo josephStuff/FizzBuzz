@@ -23,6 +23,23 @@ h6 {
     color: var(--jw-dark-color);
 }
 
+
+.fizz {
+    color: rgb(255, 71, 47);
+    font-weight: bold;
+}
+
+.buzz {
+    color: rgb(179, 116, 22);
+    font-weight: bold;
+}
+
+.FIZZBUZZ {
+    color: rgba(23, 148, 6, 0.432);
+    font-weight: bold;
+}
+
+
 .odd {
     font-weight: 400;
 }
