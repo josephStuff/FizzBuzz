@@ -32,19 +32,21 @@ function getValues2() {
 
 function generateNumbers(fizzValue, buzzValue) {
 
+    
     let numbers= [];
+
     for (let i = 1; i <= 100; i++) {
 
-     if (number % (buzzValue * fizzValue) == 0) {
+     if (i % (buzzValue * fizzValue) == 0) {
         numbers.push("FIZZBUZZ");
 
-       } else if (number % (buzzValue) == 0) {
+       } else if (i % (buzzValue) == 0) {
          numbers.push("buzz");
-       } else if (number % (fizzValue) == 0) {
+       } else if (i % (fizzValue) == 0) {
          numbers.push("fizz");
-      } else {
+       } else {
         numbers.push(i);
-      }
+       }
     
     }
 
@@ -52,34 +54,36 @@ function generateNumbers(fizzValue, buzzValue) {
 
 }
 
-// function displayNumbers(numbers) {
+function displayNumbers(numbers) {
 
-//     let templateRows = "";
-//     for (let index = 0; index < numbers.length; index ++) {
-//       let number = numbers[index];
-//         let result = "";
+    let templateRows = "";
 
-//       if (number % 15 == 0) {
-//         result = "FIZZBUZZ";
-//       } else if (number % 5 == 0) {
-//         result = "buzz";
-//       } else if (number % 3 == 0) {
-//         result = "fizz";
-//       } else {
-//         result = number;
-//       }
+    for (let index = 0; index < numbers.length; index ++) {
+      let number = numbers[index];
+        let result = "";
+
+      if (number % 15 == 0) {
+        result = "FIZZBUZZ";
+      } else if (number % 5 == 0) {
+        result = "buzz";
+      } else if (number % 3 == 0) {
+        result = "fizz";
+      } else {
+        result = number;
+      }
 
       
-//         let row = `<tr><td class="${result}">${result}</td></tr>`;
-//         templateRows += row;
+        let row = `<tr><td class="${result}">${result}</td></tr>`;
+        templateRows += row;
 
 
-//     }
+    }
 
-//     document.getElementById("results").innerHTML = templateRows;
-// }
+    document.getElementById("results").innerHTML = templateRows;
+}
 
 function displayData(fbData) {
+
     let contentDiv = document.getElementById("results");
     let content = "";
 
