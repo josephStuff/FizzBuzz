@@ -22,14 +22,14 @@
 
 <body class="d-flex flex-column h-100">
 
-<nav class="navbar navbar-expand-md fixed-top navbarBG navbar-dark">
+<nav class="navbar navbar-expand-md fixed-top navbarBG border border-3 border-dark navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
             <img src="img/MspectreMark.svg" height="24" class="d-inline-block align-text-top"/>
-            APP NAME
+            FIZZ BUZZ
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -44,14 +44,14 @@
                     <a class="nav-link active" aria-current="page" href="code.html">The code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://joe-watson-portfolio.netlify.app">About</a>
+                    <a class="nav-link" href="https://joe-watson-portfolio.netlify.app">About Me</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- --------------------MAAIN SECTION -->
+<!-- --------------------------------------------- MAIN SECTION ------------------------------>
 
     <main class="flex-shrink-0">
         <div class="container">
@@ -61,23 +61,116 @@
                     <pre class="line-numbers">
                         <code class="language-js">
                             
-<!-- Controller Function -->
-function getMessage() {
-    let userMessage = document.getElementById("message").value;
-    Swal.fire(
-        'Button clicked!',
-        userMessage,
-        "success"
-    );
-    console.log(userMessage);
+<!------------------------------------ Controller Function ----------------------------->
+
+
+// Program Entry Point
+
+function getValues2() {
+    let fizzValue = document.getElementById("fizzValue").value;
+    let buzzValue = document.getElementById("buzzValue").value;
+
+    fizzValue = parseInt(fizzValue);
+    buzzValue = parseInt(buzzValue);
+
+    // check if they are in fact INTEGERS !
+
+    if(Number.isInteger(fizzValue) && Number.isInteger(buzzValue) ) {
+
+        // generate a list of NUMBERS
+        let numbers = generateNumbers(fizzValue, buzzValue);
+
+        // DISPLAY A LIST OF NUMBERS
+        displayData(numbers);
+
+    } 
+    else {
+        Swal.fire({
+        icon: 'error',
+        title: 'Ooops...',
+        text: 'Only integers are allowed for Hundo'
+         })
+    }
+    
+}
+
+function generateNumbers(fizzValue, buzzValue) {
+
+    
+    let numbers= [];
+
+    for (let i = 1; i <= 100; i++) {
+
+     if (i % (buzzValue * fizzValue) == 0) {
+        numbers.push("FIZZBUZZ");
+
+       } else if (i % (buzzValue) == 0) {
+         numbers.push("buzz");
+       } else if (i % (fizzValue) == 0) {
+         numbers.push("fizz");
+       } else {
+        numbers.push(i);
+       }
+    
+    }
+
+    return numbers;
+
+}
+
+function displayNumbers(numbers) {
+
+    let templateRows = "";
+
+    for (let index = 0; index < numbers.length; index ++) {
+      let number = numbers[index];
+        let result = "";
+
+      if (number % 15 == 0) {
+        result = "FIZZBUZZ";
+      } else if (number % 5 == 0) {
+        result = "buzz";
+      } else if (number % 3 == 0) {
+        result = "fizz";
+      } else {
+        result = number;
+      }
+
+      
+        let row = `<tr><td class="${result}">${result}</td></tr>`;
+        templateRows += row;
+
+
+    }
+
+    document.getElementById("results").innerHTML = templateRows;
+}
+
+function displayData(fbData) {
+
+    let contentDiv = document.getElementById("results");
+    let content = "";
+
+    //   CLEAR PREVIOUS DATA
+    contentDiv.innerHTML = "";
+
+    for (let i = 0; i < fbData.length; i++) {
+        let dataValue = fbData[i];
+        let dataElement = `<div class="col ${dataValue}">${dataValue}</div>`;
+        content += dataElement;
+    }
+
+    // WRITE THE RESULTS TO THE PAGE
+    contentDiv.innerHTML = content;
+}
 }
                         </code>
                     </pre>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <p>I think this is placeholder text?  maybe?</p>
-                    <h3>getMessage</h3>
-                    <p>this is the user's message that is printed</p>
+                    <h3>This is the Javascript code.</h3>
+                    <h3>A PRISM FEATURE</h3>
+                    <h3>from PRISIMjs.com</h3>
                 </div>
             </div>
 
@@ -85,7 +178,7 @@ function getMessage() {
     </main>
 
 
-    <!-- -------------------FOOTER------- -->
+    <!-- --------------------------------------------- FOOTER ------------------------ -->
     <footer class="footer mt-auto py-3 sticky-footer">
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-3 gy-2">

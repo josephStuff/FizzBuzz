@@ -22,7 +22,7 @@
 
 <body class="d-flex flex-column h-100">
 
-<nav class="navbar navbar-expand-md fixed-top navbarBG navbar-dark">
+<nav class="navbar navbar-expand-md fixed-top border border-3 border-dark navbarBG navbar-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
             <img src="img/MspectreMark.svg" height="24" class="d-inline-block align-text-top"/>
@@ -44,7 +44,7 @@
                     <a class="nav-link" href="code.html">The code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://joe-watson-portfolio.netlify.app">About</a>
+                    <a class="nav-link" href="https://joe-watson-portfolio.netlify.app">About Me</a>
                 </li>
             </ul>
         </div>
@@ -55,28 +55,29 @@
        <div class="container mt-5">
             <div class="row">
                 <div class="col">
-                    <h1>FIZZBUZZ: A coding challenge</h1>
-                    <h4 class="lead">
-                        Live Life One loop at a time.  A javascript application using loops.
-                          Write a program that displays numbers of your choice.  Displaying even numbers in <span class="fw-bold">BOLD</span>.
-                    </h4>
-                    <h2 class="mt-5 border-bottom border-5 border-dark">Instructions</h2>
-                    <p>Enter a starting value and an ending value.  Press the button and the values will appear.</p>
+                    <h1 class="border-bottom border-5 border-dark mb-4">FIZZBUZZ: A coding challenge</h1>
+                    <h3>
+                        AJavascript application using loops.  This is a program that displays numbers of your
+                         choice & turns them into the words <span class="fw-bold">"fizz, buzz or FIZZBUZZ"</span>.  Your numbers and multiples of your numbers
+                         will transform the integer into the <span class="fw-bold">"fizz, buzz, or FIZZBUZZ!"</span>.
+                    </h3>
+                    <h1 class="mt-5 border-bottom border-5 border-dark">Instructions</h1>
+                    <h3>Enter a starting value and an ending value.  Press the button and the values will appear.</h3>
                 </div>
                 <div class="col">
                     <div>
-                        <h5>Enter Values</h5>
+                        <h4 class="d-flex justify-content-center">Enter Values</h4>
                         <form class="row">
                             <div class="col">
-                                 <label for="fizzValue" class="form-label">Fizz Value</label>
-                                <input type="text" class="form-control" id="fizzValue" type="number" placeholder="Start Value" value=1 aria-label="Start Value">
+                                 <label for="fizzValue" class="form-label d-flex justify-content-center">The FIZZ Number</label>
+                                <input type="text" class="form-control" id="fizzValue" type="number" placeholder="Start Value" value=3 aria-label="Start Value">
                             </div>
                             <div class="col">
-                                 <label for="buzzValue" class="form-label">Buzz Value</label>
-                                <input type="text" class="form-control" id="buzzValue" type="number" placeholder="End Value" value=100 aria-label="End Value">
+                                 <label for="buzzValue" class="form-label d-flex justify-content-center">The BUZZ Number</label>
+                                <input type="text" class="form-control" id="buzzValue" type="number" placeholder="End Value" value=5 aria-label="End Value">
                             </div>
-                            <div class="col-12 d-flex justify-content-lg-end">
-                                <button id="btnSubmit" type="button" class="btn btn-dark btn-large">Display The FIZZBUZZ</button>
+                            <div class="col-12 d-flex justify-content-lg-end mt-2">
+                                <button id="btnSubmit" type="button" class="btn btn-primary text-black btn-large buttonbg border border-dark">Display The FIZZBUZZ</button>
                             </div>
                         </form>
                         <h2 class="mt-5 border-bottom border-5 border-dark">Results</h2>
