@@ -5,6 +5,7 @@
     --jw-light-color: #ece7e7;
     --jw-primary-color: #001ef3;
     --jw-secondary-color: #fffb29;
+    --jw-social-color: #03f5e9;
 }
 
 main>.container {
@@ -124,12 +125,12 @@ h6 {
 }
 
 footer .social>a {
-    color: var(--jw-light-color);
-    opacity: .75;
+    color: var(--jw-social-color);
+    opacity: .45;
 
 }
 
 footer .social>a:hover {
-    color: var(--jw-secondary-color);
-    opacity: .90;
+    color: var(--jw-social-color);
+    opacity: 1;
 }
